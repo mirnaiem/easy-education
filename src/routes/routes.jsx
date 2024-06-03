@@ -6,6 +6,8 @@ import Courses from "../page/Courses";
 import Service from "../page/Service";
 import Event from "../page/Event";
 import BLog from "../page/BLog";
+import Login from "../page/Login";
+import Register from "../page/Register";
 
 const router = createBrowserRouter([
  {
@@ -35,6 +37,14 @@ const router = createBrowserRouter([
     {
      path:'event',
      element:<Event/>
+    },
+    {
+     path:'login',
+     element:<Login/>
+    },
+    {
+     path:'register',
+     element:<Register/>
     },
    ]
  }
