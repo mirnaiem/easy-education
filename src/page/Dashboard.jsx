@@ -1,12 +1,11 @@
 import { Link } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
-import { useState } from "react";
 
 
 
 const Dashboard = () => {
  const {user}=useAuth()
- const [user,setUser]=useState([])
+ 
 
  return (
   <div className="shadow-2xl w-1/2 h-1/2  rounded-2xl ">
