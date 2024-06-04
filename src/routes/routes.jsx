@@ -16,7 +16,7 @@ import AllCourses from "../page/AllCourses";
 import AddBlog from "../page/AddBlog";
 import SeeDetails from "../page/SeeDetails";
 import UpdateCourse from "../page/UpdateCourse";
-// import UpdateProfile from "../page/UpdateProfile";
+import UpdateProfile from "../page/UpdateProfile";
 
 const router = createBrowserRouter([
  {
@@ -91,10 +91,12 @@ const router = createBrowserRouter([
    path:'addblog',
    element:<AddBlog/>,
   },
-  //   {
-  //  path:'dashboard/updateprofile',
-  //  element:<UpdateProfile/>,
-  // },
+    {
+   path:'dashboard/updateprofile/:id',
+   element:<UpdateProfile/>,
+   loader:({params})=>fetch(`https://easy-education-server.vercel.app/users/get/${params.id}`)
+  
+  },
   ]
    },
 ]);

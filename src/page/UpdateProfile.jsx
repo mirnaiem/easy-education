@@ -3,21 +3,22 @@ import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const UpdateProfile = () => {
- const data=useLoaderData();
- const id=data._id
- const [title,setTitle]=useState(data.title);
- const [price,setPrice]=useState(data.price);
- const [description,setDescription]=useState(data.description);
- const [photo,setPhoto]=useState(data.photo);
+ const info=useLoaderData();
+ const email=info.email;
+ const [name,setName]=useState(info?.name);
+ const [age,setAge]=useState(info?.age);
+ const [number,setNumber]=useState(info?.number);
+ const [photo,setPhoto]=useState(info?.photo);
  const handleSubmit = async (e) => {
   e.preventDefault();
   const form = e.target;
-  const title = form.title.value;
-  const price = form.price.value;
-  const description = form.description.value;
+  const name = form.name.value;
+  const age = form.age.value;
+  const number = form.number.value;
   const photo = form.photo.value;
 
-  const course = {  title,  price, description, photo };
+  const userData = {  name,  age, number, photo, email:info?.email };
+  console.log(userData);
 
   const result = await Swal.fire({
     title: "Do you want update this product?",
@@ -29,12 +30,12 @@ const UpdateProfile = () => {
 
   if (result.isConfirmed) {
     try {
-      const response = await fetch(`https://easy-education-server.vercel.app/courses/${id}`, {
+      const response = await fetch(`https://easy-education-server.vercel.app/users/${email}`, {
         method: "PATCH",
         headers: {
           "Content-type": "application/json"
         },
-        body: JSON.stringify(course)
+        body: JSON.stringify(userData)
       });
 
       const data = await response.json();
@@ -56,29 +57,37 @@ const UpdateProfile = () => {
   <h1 className="text-4xl font-semibold text-center mb-8">Update Product </h1>
  <form onSubmit={handleSubmit} className="space-y-2 p-5 shadow-2xl bg-gray-400 rounded-xl">
 
-  <label className="text-xl"> Title</label>
+  <label className="text-xl"> Name</label>
   <input className="p-4 border-0 border-none  w-full rounded-lg bg-slate-200" 
-  value={title} 
+  value={name} 
   type="text" 
-  name="title" 
-  placeholder="title" 
-  onChange={(e)=>setTitle(e.target.value)}/>
+  name="name" 
+  placeholder="name" 
+  onChange={(e)=>setName(e.target.value)}/>
 
-  <label className="text-xl"> Price</label>
+  <label className="text-xl"> Email</label>
+  <input className="p-4 border-none border w-full rounded-lg bg-slate-200" 
+  type="email" 
+  defaultValue={info?.email} 
+  name="email"
+   placeholder="email"
+  disabled
+  />
+
+  <label className="text-xl"> Age</label>
+  <input className="p-4 border-none border w-full rounded-lg bg-slate-200" 
+  type="text" 
+  value={age} 
+  name="age" 
+  placeholder="age"
+  onChange={(e)=>setAge(e.target.value)}/>
+  <label className="text-xl"> Number</label>
   <input className="p-4 border-none border w-full rounded-lg bg-slate-200" 
   type="number" 
-  value={price} 
-  name="price"
-  placeholder="price" 
-  onChange={(e)=>setPrice(e.target.value)}/>
-
-  <label className="text-xl"> Description</label>
-  <input className="p-4 border-none border w-full rounded-lg bg-slate-200" 
-  type="text" 
-  value={description} 
-  name="description" 
-  placeholder="description"
-  onChange={(e)=>setDescription(e.target.value)}/>
+  value={number} 
+  name="number" 
+  placeholder="number"
+  onChange={(e)=>setNumber(e.target.value)}/>
 
   <label className="text-xl"> Photo URl</label>
    <input className="p-4 border-none border w-full rounded-lg bg-slate-200" 
