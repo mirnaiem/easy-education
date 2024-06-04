@@ -5,6 +5,24 @@ const GoogleLogin = () => {
  const {googleLogin}=useAuth()
  const handleGoogleLogin=()=>{
   googleLogin()
+  .then((data)=>{
+   if(data?.user?.email){
+    const userInfo={
+     'email': data?.user?.email,
+     'name':data?.user?.displayName
+    }
+    fetch('https://easy-education-server.vercel.app/users', {
+     method: "POST",
+     headers: {
+       "Content-type": "application/json"
+     },
+     body: JSON.stringify(userInfo)
+    })
+    .then((res)=>res.json())
+    .then((data)=>console.log(data))
+
+   }
+  })
  }
  return (
   <div>

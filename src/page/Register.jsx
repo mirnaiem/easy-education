@@ -12,11 +12,30 @@ const handleRegister=async (e)=>{
 e.preventDefault()
 const form=e.target;
 const email=form.email.value;
+const name=form.name.value;
 const password=form.pass.value;
 const confirmPass=form.confirmPass.value;
 console.log(email,password,confirmPass);
 if(password === confirmPass){
- await createUser(email,password);
+ await createUser(email,password)
+ .then((data)=>{
+  if(data?.user?.email){
+   const userInfo={
+    'email': data?.user?.email,
+    'name': name
+   }
+   fetch('https://easy-education-server.vercel.app/users', {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json"
+    },
+    body: JSON.stringify(userInfo)
+  })
+  .then((res)=>res.json())
+  .then((data)=>console.log(data))
+
+  }
+ });
 }
 }
 useEffect(()=>{
@@ -33,6 +52,12 @@ return (
    </div>
    <div className="card shrink-0 w-1/2 max-w-sm shadow-2xl bg-base-100">
      <form onSubmit={handleRegister} className="card-body">
+       <div className="form-control">
+         <label className="label">
+           <span className="label-text">Name</span>
+         </label>
+         <input type="name" name="name" placeholder="name" className="input input-bordered" required />
+       </div>
        <div className="form-control">
          <label className="label">
            <span className="label-text">Email</span>
