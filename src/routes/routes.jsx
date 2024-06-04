@@ -16,6 +16,7 @@ import AllCourses from "../page/AllCourses";
 import AddBlog from "../page/AddBlog";
 import SeeDetails from "../page/SeeDetails";
 import UpdateCourse from "../page/UpdateCourse";
+import UpdateProfile from "../page/UpdateProfile";
 
 const router = createBrowserRouter([
  {
@@ -89,6 +90,10 @@ const router = createBrowserRouter([
     {
    path:'addblog',
    element:<AddBlog/>,
+  },
+    {
+   path:'dashboard/updateprofile',
+   element:<UpdateProfile/>,
   },
   ]
    },

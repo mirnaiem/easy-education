@@ -24,6 +24,7 @@ const DashboardLayout = () => {
       <h1 className="text-3xl text-white mt-2 text-center">{user?.displayName}</h1>
       </div>
 
+      <li className="text-center text-xl text-white hover:bg-slate-400 hover:rounded-lg "><Link  to='/dashboard'>Profile</Link></li>
       <li className="text-center text-xl text-white hover:bg-slate-400 hover:rounded-lg "><Link  to='/'>Home</Link></li>
       <li className="text-center text-xl text-white hover:bg-slate-400 hover:rounded-lg "><Link  to='/users'>All User</Link></li>
       <li className="text-center text-xl text-white hover:bg-slate-400 hover:rounded-lg "><Link  to='/allcourses'>All Courses</Link></li>
