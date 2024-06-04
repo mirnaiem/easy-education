@@ -4,11 +4,13 @@ import Footer from "../page/Footer";
 
 const MainLayout = () => {
  return (
-  <div className="font-serif">
-   <NavBar/>
-   <Outlet/>
-   <Footer/>
+  <div className="flex flex-col min-h-screen font-serif">
+  <NavBar />
+  <div className="flex-grow">
+    <Outlet />
   </div>
+  <Footer />
+</div>
  );
 };
 

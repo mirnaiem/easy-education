@@ -35,8 +35,8 @@ const NavBar = () => {
         <li><Link className="text-xl" to='/course'>Courses</Link></li>
         <li>
         <Link className="text-xl" to='/service'>Services</Link>
-    
         </li>
+        {user && <li><Link to="/dashboard" className="text-xl">Dashboard</Link></li>}
         <li><Link className="text-xl" to="/blog">BLog</Link></li>
         <li><Link className="text-xl" to="/event">Event</Link></li>
     </ul>

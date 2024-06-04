@@ -8,6 +8,12 @@ import Event from "../page/Event";
 import BLog from "../page/BLog";
 import Login from "../page/Login";
 import Register from "../page/Register";
+import DashboardLayout from "../layouts/DashboardLayout";
+import Dashboard from "../page/Dashboard";
+import User from "../page/User";
+import AddCourse from "../page/AddCourse";
+import AllCourses from "../page/AllCourses";
+import AddBlog from "../page/AddBlog";
 
 const router = createBrowserRouter([
  {
@@ -47,7 +53,33 @@ const router = createBrowserRouter([
      element:<Register/>
     },
    ]
- }
+ },
+ {
+  path:'',
+  element:<DashboardLayout/>,
+  children:[
+    {
+   path:'dashboard',
+   element:<Dashboard/>
+  },
+    {
+   path:'users',
+   element:<User/>
+  },
+    {
+   path:'allcourses',
+   element:<AllCourses/>,
+  },
+    {
+   path:'addcourse',
+   element:<AddCourse/>,
+  },
+    {
+   path:'addblog',
+   element:<AddBlog/>,
+  },
+  ]
+   },
 ]);
 
 export default router
