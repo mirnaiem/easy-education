@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const SingleDashboardCourse = ({ course, onDelete }) => {
-  const { id, title, brand, description, photo, price } = course;
+  const { _id, title,  description, photo, price } = course;
 
   const handleDelete = async (id) => {
     try {
@@ -19,7 +19,7 @@ const SingleDashboardCourse = ({ course, onDelete }) => {
       });
 
       if (result.isConfirmed) {
-        const response = await fetch(`http://localhost:3000/shoes/${id}`, {
+        const response = await fetch(`https://easy-education-server.vercel.app/courses/${_id}`, {
           method: 'DELETE'
         });
 
@@ -52,13 +52,12 @@ const SingleDashboardCourse = ({ course, onDelete }) => {
       <figure><img className="w-full h-[300px]" src={photo} alt="Shoes" /></figure>
       <div className="card-body text-start">
         <h2 className="card-title font-bold">{title}</h2>
-        <p className="text-xl">{brand}</p>
         <p><span className="xl font-bold">Price:</span> ${price}</p>
         <p>{description}</p>
         <div className="card-actions justify-end">
-          <Link to={`/updateproducts/${id}`} className="btn bg-[#014dcf] text-white">Edit</Link>
-          <button onClick={() => handleDelete(id)} className="btn bg-red-500 text-white">Delete</button>
-          <Link to={`/details/${id}`} className="btn bg-[#01cf87] text-white">See Details</Link>
+          <Link to={`/updatecourse/${_id}`} className="btn bg-[#014dcf] text-white">Edit</Link>
+          <button onClick={() => handleDelete(_id)} className="btn bg-red-500 text-white">Delete</button>
+          <Link to={`/details/${_id}`} className="btn bg-[#01cf87] text-white">See Details</Link>
         </div>
       </div>
     </div>

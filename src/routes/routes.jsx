@@ -14,6 +14,8 @@ import User from "../page/User";
 import AddCourse from "../page/AddCourse";
 import AllCourses from "../page/AllCourses";
 import AddBlog from "../page/AddBlog";
+import SeeDetails from "../page/SeeDetails";
+import UpdateCourse from "../page/UpdateCourse";
 
 const router = createBrowserRouter([
  {
@@ -44,6 +46,16 @@ const router = createBrowserRouter([
      path:'event',
      element:<Event/>
     },
+    {
+      path:'/details/:_id',
+      element:<SeeDetails/>,
+      loader:({params})=>fetch(`https://easy-education-server.vercel.app/courses/${params._id}`)
+     },
+    {
+      path:'/updatecourse/:_id',
+      element:<UpdateCourse/>,
+      loader:({params})=>fetch(`https://easy-education-server.vercel.app/courses/${params._id}`)
+     },
     {
      path:'login',
      element:<Login/>

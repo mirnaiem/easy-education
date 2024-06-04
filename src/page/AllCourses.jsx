@@ -4,7 +4,7 @@ import SingleDashboardCourse from "../components/SingleDashboardCourse";
 const AllCourses = () => {
  const [courses,setCourses]=useState([]);
  useEffect(()=>{
-  fetch('http://localhost:3000/courses')
+  fetch('https://easy-education-server.vercel.app/courses')
   .then((res)=>res.json())
   .then((data)=>setCourses(data))
  },[])

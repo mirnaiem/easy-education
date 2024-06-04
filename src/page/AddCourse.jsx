@@ -21,7 +21,7 @@ const AddCourse = () => {
 
   if (result.isConfirmed) {
     try {
-      const response = await fetch('http://localhost:3000/courses', {
+      const response = await fetch('https://easy-education-server.vercel.app/courses', {
         method: "POST",
         headers: {
           "Content-type": "application/json"
