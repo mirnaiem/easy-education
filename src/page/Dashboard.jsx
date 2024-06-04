@@ -4,9 +4,7 @@ import useAuth from "../hooks/useAuth";
 
 
 const Dashboard = () => {
- const {user}=useAuth()
- 
-
+ const {user}=useAuth();
  return (
   <div className="shadow-2xl w-1/2 h-1/2  rounded-2xl ">
   <div className="flex flex-col justify-center items-center h-[80%] ">
