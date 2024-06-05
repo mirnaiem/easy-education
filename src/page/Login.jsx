@@ -1,10 +1,15 @@
+/* eslint-disable no-undef */
 /* eslint-disable react/no-unescaped-entities */
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import useAuth from "../hooks/useAuth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import GoogleLogin from "../components/GoogleLogin";
-
+import { getAuth, sendPasswordResetEmail } from "firebase/auth";
+import app from "../firebase.config";
+const auth=getAuth(app)
 const Login = () => {
+const [show,setShow]=useState(false);
+const emailRef=useRef()
  const {signInUser,user}=useAuth()
  const navigate=useNavigate();
  const location=useLocation();
@@ -22,6 +27,19 @@ const Login = () => {
        navigate(from,{replace:true})
      }
     },[user,from,navigate])
+
+const handleResetPass=()=>{
+const email=emailRef.current.value;
+if(!email){
+  alert("please provide your email")
+}
+sendPasswordResetEmail(auth,email)
+.then(()=>alert("check your email"))
+.catch(error=>{
+  console.log(error);
+})
+}
+
 return (
  <div className="hero min-h-screen bg-base-200">
  <div className="hero-content flex-col justify-evenly lg:flex-row-reverse">
@@ -35,16 +53,21 @@ return (
          <label className="label">
            <span className="label-text">Email</span>
          </label>
-         <input type="email" name="email" placeholder="email" className="input input-bordered" required />
+         <input type="email" name="email" ref={emailRef} placeholder="email" className="input input-bordered" required />
        </div>
        <div className="form-control">
          <label className="label">
            <span className="label-text">Password</span>
          </label>
-         <input type="password" name="pass" placeholder="password" className="input input-bordered" required />
-         <label className="label">
-           <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+         <input type={show?"text":"password"} name="pass" placeholder="password" className="input input-bordered" required />
+      <div className="flex justify-between">
+      <label >
+          <small onClick={()=>setShow(!show)}> {show?<span>Hide Password</span>:<span>Show Password</span>}</small>
          </label>
+         <label className="label">
+           <a href="#" onClick={handleResetPass} className="label-text-alt link link-hover">Forgot password?</a>
+         </label>
+      </div>
        </div>
        <div className="form-control mt-6">
          <button className="btn btn-primary">Login</button>

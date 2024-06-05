@@ -1,9 +1,11 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import GoogleLogin from "../components/GoogleLogin";
 
 const Register = () => {
+const [show,setShow]=useState (false)
+
  const {createUser,user}=useAuth();
  const navigate=useNavigate();
  const location=useLocation();
@@ -44,7 +46,7 @@ useEffect(()=>{
  }
 },[user,from,navigate])
 return (
- <div className="hero min-h-screen bg-base-200">
+ <div className="hero min-h-screen mt-20 bg-base-200">
  <div className="hero-content flex-col justify-evenly lg:flex-row-reverse">
    <div className="text-center w-1/2 lg:text-left">
      <h1 className="text-5xl font-bold">Register now!</h1>
@@ -68,14 +70,14 @@ return (
          <label className="label">
            <span className="label-text">Password</span>
          </label>
-         <input type="password" name="pass" placeholder="password" className="input input-bordered" required />
+         <input type={show?'text':'password'} name="pass" placeholder="password" className="input input-bordered" required />
+         <label className="flex justify-end" >
+          <small onClick={()=>setShow(!show)}> {show?<span>Hide Password</span>:<span>Show Password</span>}</small>
+         </label>
          <label className="label">
            <span className="label-text">Confirm Password</span>
          </label>
          <input type="password" name="confirmPass" placeholder="confirm password" className="input input-bordered" required />
-         <label className="label">
-           <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-         </label>
        </div>
        <div className="form-control mt-6">
          <button className="btn btn-primary">Register</button>
