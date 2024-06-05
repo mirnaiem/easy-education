@@ -17,9 +17,9 @@ const JoinUS = () => {
 
       {/* Text Elements */}
       <div className="relative z-10 flex flex-col justify-center items-center text-white h-[600px]">
-        <h2 className="orelegaOne text-8xl text-center">Join us in the ECA আড্ডা</h2>
+        <h2 className="orelegaOne text-3xl md:text-8xl text-center">Join us in the ECA আড্ডা</h2>
         
-        <div className="flex flex-wrap gap-4 mt-4">
+        <div className="flex flex-wrap  gap-4 mt-4">
           <span className="inline-flex justify-center items-center gap-2">
             <FaPeopleRoof size="20px" />
             Join a community to build more ECAs

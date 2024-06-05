@@ -17,43 +17,44 @@ const Team = () => {
 
   return (
     <div>
-      <h1 className="font-bold text-[#101010] md:text-6xl text-center">People who trust us!</h1>
-      <p className="text-center my-4">They’ve known us & they’ve seen us delivering to you!</p>
-      <Slider {...settings}>
-        <div>
-          <div className="flex items-center gap-10">
-            <img className="w-52 h-52 rounded-full" src="https://img.freepik.com/free-photo/close-up-portrait-curly-handsome-european-male_176532-8133.jpg?t=st=1717422027~exp=1717425627~hmac=b830783728787d9612ab0a92a5afadd5a09bcbe4f491226d5e9164d7601620fd&w=1060" alt="" />
-            <div>
-              <h1 className="text-4xl font-bold">"I’m a strong advocate against consultancy firms.."</h1>
-              <p>I’m a strong advocate against consultancy firms that take financial advantage of Bangladeshi students with little knowledge regarding studying in the US. However, DP Tutorials is the only mentoring services with online courses that I feel comfortable forwarding students to during their study abroad knowledge discovery journey. I truly appreciate the work that you’re putting in to help thousands of students!</p>
-            </div>
-          </div>
-          <div className="flex gap-64 mt-4">
-            <div></div>
-            <div>
-              <p className="text-2xl font-bold">Nuzhat Minhaz</p>
-              <p className="text-xl">Product Manager, Microsoft. RIT '23</p>
-            </div>
-          </div>
+  <h1 className="font-bold text-[#101010] text-3xl md:text-6xl text-center">People who trust us!</h1>
+  <p className="text-center my-4 text-lg md:text-xl">They’ve known us & they’ve seen us delivering to you!</p>
+  <Slider {...settings}>
+    <div>
+      <div className="flex flex-col md:flex-row items-center md:gap-10">
+        <img className="w-32 h-32 md:w-52 md:h-52 rounded-full" src="https://img.freepik.com/free-photo/close-up-portrait-curly-handsome-european-male_176532-8133.jpg?t=st=1717422027~exp=1717425627~hmac=b830783728787d9612ab0a92a5afadd5a09bcbe4f491226d5e9164d7601620fd&w=1060" alt="" />
+        <div className="mt-4 md:mt-0">
+          <h1 className="text-2xl md:text-4xl font-bold">"I’m a strong advocate against consultancy firms.."</h1>
+          <p className="mt-2 text-sm md:text-base">I’m a strong advocate against consultancy firms that take financial advantage of Bangladeshi students with little knowledge regarding studying in the US. However, DP Tutorials is the only mentoring service with online courses that I feel comfortable forwarding students to during their study abroad knowledge discovery journey. I truly appreciate the work that you’re putting in to help thousands of students!</p>
         </div>
+      </div>
+      <div className="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-64 mt-4">
+        <div></div>
         <div>
-          <div className="flex items-center gap-10">
-            <img className="w-52 h-52 rounded-full" src="https://img.freepik.com/premium-vector/handsome-businessman-suit_88465-811.jpg?w=740" alt="" />
-            <div>
-              <h1 className="text-4xl font-bold">"I have witnessed its growth from day one..."</h1>
-              <p>"I recommend it to everyone who wants to pursue a foreign education." I have seen DP Tutorials grow rapidly ever since its first SAT Batch started back in 2020. Since then, they have built a very informative online course & maintained high quality SAT cohorts. I recommend it to everyone who wants to pursue a foreign education.</p>
-            </div>
-          </div>
-          <div className="flex gap-64 mt-4">
-            <div></div>
-            <div>
-              <p className="text-2xl font-bold">Seeam Shahid Noor</p>
-              <p className="text-xl">Product Manager, IBM. Harvard '19</p>
-            </div>
-          </div>
+          <p className="text-xl md:text-2xl font-bold">Nuzhat Minhaz</p>
+          <p className="text-lg md:text-xl">Product Manager, Microsoft. RIT '23</p>
         </div>
-      </Slider>
+      </div>
     </div>
+    <div>
+      <div className="flex flex-col md:flex-row items-center md:gap-10">
+        <img className="w-32 h-32 md:w-52 md:h-52 rounded-full" src="https://img.freepik.com/premium-vector/handsome-businessman-suit_88465-811.jpg?w=740" alt="" />
+        <div className="mt-4 md:mt-0">
+          <h1 className="text-2xl md:text-4xl font-bold">"I have witnessed its growth from day one..."</h1>
+          <p className="mt-2 text-sm md:text-base">"I recommend it to everyone who wants to pursue a foreign education." I have seen DP Tutorials grow rapidly ever since its first SAT Batch started back in 2020. Since then, they have built a very informative online course & maintained high-quality SAT cohorts. I recommend it to everyone who wants to pursue a foreign education.</p>
+        </div>
+      </div>
+      <div className="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-64 mt-4">
+        <div></div>
+        <div>
+          <p className="text-xl md:text-2xl font-bold">Seeam Shahid Noor</p>
+          <p className="text-lg md:text-xl">Product Manager, IBM. Harvard '19</p>
+        </div>
+      </div>
+    </div>
+  </Slider>
+</div>
+
   );
 };
 

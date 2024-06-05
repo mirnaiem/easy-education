@@ -7,7 +7,7 @@ const NavBar = () => {
     await logOut()
   }
  return (
-  <div className="navbar w-[90%] mx-auto bg-base-100 fixed z-10 top-0 left-16">
+  <div className="navbar w-[90%] mx-auto bg-base-100 md:fixed z-50 top-0 left-16">
   <div className="navbar-start ">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -27,7 +27,7 @@ const NavBar = () => {
         <li><Link className="text-xl" to="/event">Event</Link></li>
       </ul>
     </div>
-    <img className="w-20 h-20 border-blue-500 border rounded-full" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpSTmn83W_oZhFASeT09nGKYDQeljZZI3V4A&s" alt="" />
+    <img className="w-20 h-20 border-blue-500 border rounded-full invisible md:visible" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpSTmn83W_oZhFASeT09nGKYDQeljZZI3V4A&s" alt="" />
   </div>
   <div className="navbar-center hidden  lg:flex">
     <ul className="menu menu-horizontal  px-1">
@@ -45,12 +45,13 @@ const NavBar = () => {
   {
           user? <>
             {user && user.photoURL ? (
-              <img className="rounded-full me-2 w-10" title={user?.displayName} src={user?.
+              <img className="rounded-full  me-2 w-10" title={user?.displayName} src={user?.
                 photoURL} />
             ) : (
               <span title={user?.displayName} className="text-lg font-bold">{user?.displayName}</span>
             )
-            } <Link to='/consultation' className="btn bg-[#101010]  text-white ">Free Consultation</Link>
+            } <Link to='/consultation' className="btn bg-[#101010] hidden md:flex items-center justify-center text-white">Free Consultation</Link>
+
             <button onClick={handleLogOut}  className="btn bg-orange-400 text-lg text-white">LogOut</button></>: <div>
             
       <Link to='/login' className="btn bg-[#f56416]  text-white">Login</Link>

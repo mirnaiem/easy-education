@@ -15,7 +15,7 @@ const Correction = () => {
 
       {/* Text Elements */}
       <div className="relative z-10 flex flex-col justify-center items-center text-white h-[600px]">
-        <h2 className="orelegaOne text-8xl text-center">Deluxe Essay Correction <br /> Service </h2>
+        <h2 className=" text-3xl md:text-8xl text-center">Deluxe Essay Correction <br /> Service </h2>
         <p className="text-center">What best way to impress admissions officers than write the best college essays possible?</p>
  
         

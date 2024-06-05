@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 const Application = () => {
  return (
-  <div className="flex justify-between items-center my-40 gap-8 ">
-   <div className="w-1/2">
+  <div className="flex flex-col-reverse md:flex-row justify-between items-center my-40 gap-8 ">
+   <div className="md:w-1/2">
     <h1 className=" text-2xl font-bold text-[#101010] md:text-5xl uppercase">College Application Flagship Course </h1>
     <p >In this course Dipro (your College Application Guru) guides you through every possible steps you need to know about studying abroad by spending a bunch of sleepless nights. So that you don’t have to do it.</p>
     <div className="my-5 flex gap-8 items-center">
@@ -27,7 +27,7 @@ const Application = () => {
      </div>
     </div>
     <div className="my-5 flex gap-8 items-center">
-    <i className="flex items-center justify-center bg-black text-white rounded-full p-2 w-20 h-16  text-xl font-bold">
+    <i className="flex items-center justify-center bg-black text-white rounded-full p-2  w-20 h-16  text-xl font-bold">
     <VscNotebookTemplate  />
     </i>
      <div>
@@ -46,7 +46,7 @@ const Application = () => {
     </div>
     <Link className="uppercase btn bg-[#f56416] rounded-2xl text-white">View Courses</Link>
    </div>
-   <div className="w-1/2">
+   <div className="md:w-1/2">
     <img className="w-full rounded-full" src="https://www.shutterstock.com/image-photo/online-elearning-courses-offer-students-600nw-2346969385.jpg" alt="" />
    </div>
   </div>
