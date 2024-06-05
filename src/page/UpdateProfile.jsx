@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const UpdateProfile = () => {
+  const token=localStorage.getItem('token')
  const info=useLoaderData();
  const email=info.email;
  const [name,setName]=useState(info?.name);
@@ -33,7 +34,8 @@ const UpdateProfile = () => {
       const response = await fetch(`https://easy-education-server.vercel.app/users/${email}`, {
         method: "PATCH",
         headers: {
-          "Content-type": "application/json"
+          "Content-type": "application/json",
+          authorization:`Bearer ${token}`
         },
         body: JSON.stringify(userData)
       });

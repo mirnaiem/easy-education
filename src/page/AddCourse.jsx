@@ -2,6 +2,7 @@ import Swal from "sweetalert2";
 const AddCourse = () => {
 
  const handleSubmit = async (e) => {
+  const token=localStorage.getItem('token')
   e.preventDefault();
   const form = e.target;
   const title = form.title.value;
@@ -24,7 +25,8 @@ const AddCourse = () => {
       const response = await fetch('https://easy-education-server.vercel.app/courses', {
         method: "POST",
         headers: {
-          "Content-type": "application/json"
+          "Content-type": "application/json",
+          authorization:`Bearer ${token}`
         },
         body: JSON.stringify(product)
       });
