@@ -14,6 +14,7 @@ const NavBar = () => {
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
       </div>
       <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+        <li><Link className="text-xl" to='/'>Home</Link></li>
         <li><Link className="text-xl" to='/about'>About Us</Link></li>
         <li><Link className="text-xl" to='/course'>Courses</Link></li>
         <li>
@@ -27,10 +28,11 @@ const NavBar = () => {
         <li><Link className="text-xl" to="/event">Event</Link></li>
       </ul>
     </div>
-    <img className="w-20 h-20 border-blue-500 border rounded-full invisible md:visible" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpSTmn83W_oZhFASeT09nGKYDQeljZZI3V4A&s" alt="" />
+    <img className="w-20 h-20 border-blue-500 border rounded-full hidden md:flex items-center justify-center" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpSTmn83W_oZhFASeT09nGKYDQeljZZI3V4A&s" alt="" />
   </div>
   <div className="navbar-center hidden  lg:flex">
     <ul className="menu menu-horizontal  px-1">
+    
     <li><Link className="text-xl" to='/about'>About Us</Link></li>
         <li><Link className="text-xl" to='/course'>Courses</Link></li>
         <li>
