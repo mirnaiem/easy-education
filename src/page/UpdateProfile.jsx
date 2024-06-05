@@ -54,7 +54,7 @@ const UpdateProfile = () => {
 
  return (
   <div  className="p-5 bg-base-100 my-8">
-  <h1 className="text-4xl font-semibold text-center mb-8">Update Product </h1>
+  <h1 className="text-4xl font-semibold text-center mb-8">Update Your Profile </h1>
  <form onSubmit={handleSubmit} className="space-y-2 p-5 shadow-2xl bg-gray-400 rounded-xl">
 
   <label className="text-xl"> Name</label>

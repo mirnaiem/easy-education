@@ -26,10 +26,10 @@ const DashboardLayout = () => {
 
       <li className="text-center text-xl text-white hover:bg-slate-400 hover:rounded-lg "><Link  to='/dashboard'>Profile</Link></li>
       <li className="text-center text-xl text-white hover:bg-slate-400 hover:rounded-lg "><Link  to='/'>Home</Link></li>
-      <li className="text-center text-xl text-white hover:bg-slate-400 hover:rounded-lg "><Link  to='/users'>All User</Link></li>
-      <li className="text-center text-xl text-white hover:bg-slate-400 hover:rounded-lg "><Link  to='/allcourses'>All Courses</Link></li>
-      <li className="text-center text-xl text-white hover:bg-slate-400 hover:rounded-lg "><Link  to='/addcourse'>Add Course</Link></li>
-      <li className="text-center text-xl text-white hover:bg-slate-400 hover:rounded-lg  "><Link to='/addblog'>Add Blog</Link></li>
+      <li className="text-center text-xl text-white hover:bg-slate-400 hover:rounded-lg "><Link  to='dashboard/users'>All User</Link></li>
+      <li className="text-center text-xl text-white hover:bg-slate-400 hover:rounded-lg "><Link  to='dashboard/allcourses'>All Courses</Link></li>
+      <li className="text-center text-xl text-white hover:bg-slate-400 hover:rounded-lg "><Link  to='dashboard/addcourse'>Add Course</Link></li>
+      <li className="text-center text-xl text-white hover:bg-slate-400 hover:rounded-lg  "><Link to='dashboard/addblog'>Add Blog</Link></li>
     </ul>
   
   </div>

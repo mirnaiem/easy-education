@@ -17,6 +17,7 @@ import AddBlog from "../page/AddBlog";
 import SeeDetails from "../page/SeeDetails";
 import UpdateCourse from "../page/UpdateCourse";
 import UpdateProfile from "../page/UpdateProfile";
+import Private from "./Private";
 
 const router = createBrowserRouter([
  {
@@ -69,31 +70,31 @@ const router = createBrowserRouter([
  },
  {
   path:'',
-  element:<DashboardLayout/>,
+  element:<Private><DashboardLayout/></Private>,
   children:[
     {
    path:'dashboard',
-   element:<Dashboard/>
+   element:<Private><Dashboard/></Private>
   },
     {
-   path:'users',
-   element:<User/>
+   path:'dashboard/users',
+   element:<Private><User/></Private>
   },
     {
-   path:'allcourses',
-   element:<AllCourses/>,
+   path:'dashboard/allcourses',
+   element:<Private><AllCourses/></Private>,
   },
     {
-   path:'addcourse',
-   element:<AddCourse/>,
+   path:'dashboard/addcourse',
+   element:<Private><AddCourse/></Private>,
   },
     {
-   path:'addblog',
-   element:<AddBlog/>,
+   path:'dashboard/addblog',
+   element:<Private><AddBlog/></Private>,
   },
     {
    path:'dashboard/updateprofile/:id',
-   element:<UpdateProfile/>,
+   element:<Private><UpdateProfile/></Private>,
    loader:({params})=>fetch(`https://easy-education-server.vercel.app/users/get/${params.id}`)
   
   },
